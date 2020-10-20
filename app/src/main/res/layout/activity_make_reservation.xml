@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    >
+
+    <LinearLayout
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/top"
+            >
+            <LinearLayout
+                android:weightSum="8"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_weight="4"
+                    android:layout_gravity="center"
+                    android:src="@drawable/fitness_logo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp">
+
+                </ImageView>
+
+                <TextView
+                    android:background="#AD9614"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+
+                <TextView
+                    android:text="Make Reservation"
+                    android:textStyle="bold"
+                    android:textColor="#FFFF"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+
+                <TextView
+                    android:background="#AD9614"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></TextView>
+
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_below="@id/top"
+            android:layout_margin="20dp"
+            android:background="@drawable/round_corners">
+
+            <Button
+                android:id="@+id/reservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ending_date"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/round_button"
+                android:text="Reservation"
+                android:textColor="@android:color/white"
+                android:textSize="20dp" />
+
+
+            <EditText
+                android:id="@+id/membership_type"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/round_text"
+                android:drawableLeft="@drawable/ic_id_card"
+                android:drawableRight="@drawable/ic_drop_down_arrow"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="  Membership Type"
+                android:textColor="#ffff"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <EditText
+
+                android:id="@+id/starting_date"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/membership_type"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="20dp"
+                android:drawableLeft="@drawable/ic_annual_calendar_variant"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_text"
+                android:drawableRight="@drawable/ic_drop_down_arrow"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="  Starting Date"
+                android:textColor="#ffff"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <EditText
+
+                android:id="@+id/ending_date"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/starting_date"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="20dp"
+                android:drawableLeft="@drawable/ic_annual_calendar_variant"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_text"
+                android:drawableRight="@drawable/ic_drop_down_arrow"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="  Ending Date"
+                android:textColor="#ffff"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"></RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
