@@ -10,16 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Feedback">
+
+        </activity>
+        <activity android:name=".AddTrainer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddTrainer" />
-        <activity android:name=".AddTrainee" />
-        <activity android:name=".AddTimeslot" />
-        <activity android:name=".EditTrainer" />
+        <activity android:name=".AddTrainee" >
+
+        </activity>
+
+        <activity android:name=".AddTimeslot" >
+
+        </activity>
+        <activity android:name=".EditTrainer" >
+
+        </activity>
         <activity android:name=".EditTrainee" />
         <activity android:name=".EditTimeslot" />
         <activity android:name=".TraineeLog">
