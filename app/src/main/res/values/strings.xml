@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Fitness Club</string>
+
+    <string-array name="Name">
+    <item>Usama Zafar</item>
+    <item>Usama Rasheed</item>
+    <item>Hafsa Saqib</item>
+    <item>Anas Zafar</item>
+</string-array>
+
 </resources>
