@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditTrainer"></activity>
+        <activity android:name=".AddTimeslot"></activity>
+        <activity android:name=".EditTrainer" />
         <activity android:name=".EditTrainee" />
         <activity android:name=".EditTimeslot" />
         <activity android:name=".TraineeLog">
