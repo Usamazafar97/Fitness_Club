@@ -17,11 +17,9 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="EDIT TIMESLOT"
-            android:textStyle="bold"
             android:textColor="@android:color/white"
             android:textSize="30dp"
-
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -45,9 +43,9 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/round_button"
             android:text="Update"
-            android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:textSize="24dp"
-            android:textColor="@android:color/white" />
+            android:textStyle="bold" />
 
 
         <EditText
@@ -60,45 +58,66 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="60dp"
             android:background="@drawable/round_text"
-            android:paddingLeft="30dp"
-            android:text="Name"
-            android:textStyle="bold"
-            android:textSize="24dp"
-            android:textColor="#ffff" />
+            android:drawableLeft="@drawable/ic_user_profile"
+            android:paddingLeft="20dp"
+            android:text="  Name"
+            android:textColor="#ffff"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
         <EditText
 
-            android:layout_below="@+id/name"
             android:id="@+id/start_time"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_below="@+id/name"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
+            android:drawableLeft="@drawable/ic_time"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_text"
-            android:paddingLeft="30dp"
-            android:text="Start Time"
-            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:text="  Start Time"
+            android:textColor="#ffff"
             android:textSize="24dp"
-            android:textColor="#ffff" />
+            android:textStyle="bold" />
+
         <EditText
 
-            android:layout_below="@+id/start_time"
             android:id="@+id/end_time"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_below="@+id/start_time"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
+            android:drawableLeft="@drawable/ic_time"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_text"
-            android:paddingLeft="30dp"
-            android:text="End Time"
-            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:text="  End Time"
+            android:textColor="#ffff"
             android:textSize="24dp"
-            android:textColor="#ffff" />
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <ImageView
+
+            android:src="@drawable/fitness_logo"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"></ImageView>
 
     </RelativeLayout>
 
