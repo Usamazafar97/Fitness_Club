@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogIn">
+        <activity android:name=".SignUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MakeReservation">
+        <activity android:name=".LogIn">
+
         </activity>
-        <activity android:name=".BookTrainer"></activity>
+        <activity android:name=".MakeReservation"></activity>
+        <activity android:name=".BookTrainer" />
         <activity android:name=".Feedback" />
         <activity android:name=".AddTrainer" />
         <activity android:name=".AddTrainee" />
