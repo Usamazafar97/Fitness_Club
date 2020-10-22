@@ -28,12 +28,12 @@ public class ManageTimeslot extends AppCompatActivity {
                 }
             });
             contacts=new ArrayList<>();
-            contacts.add(new ManageTimeSlotData("name","0900 - 1400"));
-            contacts.add(new ManageTimeSlotData("name","0800 - 1400"));
-            contacts.add(new ManageTimeSlotData("name","0700 - 1400"));
-            contacts.add(new ManageTimeSlotData("name","0600 - 1400"));
-            contacts.add(new ManageTimeSlotData("name","0500 - 1400"));
-            contacts.add(new ManageTimeSlotData("name","0400 - 1400"));
+            contacts.add(new ManageTimeSlotData("Hafsa Saqib","9:00 a.m - 14:00 p.m"));
+            contacts.add(new ManageTimeSlotData("Saqib Elahi","14:00 p.m - 17:00 p.m"));
+            contacts.add(new ManageTimeSlotData("Ayaan Saqib","17:00 p.m - 20:00 p.m"));
+            contacts.add(new ManageTimeSlotData("Asad Bokhari","20:00 p.m - 12:00 a.m"));
+            contacts.add(new ManageTimeSlotData("Nazia Ehsan","10:00 a.m - 13:00 p.m"));
+
             rv=findViewById(R.id.rv);
             RecyclerView.LayoutManager lm= new LinearLayoutManager(this);
             rv.setLayoutManager(lm);

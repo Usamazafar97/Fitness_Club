@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
     public void onBindViewHolder(@NonNull MyRvAdapterManageTimeslot.MyViewHolder holder, final int position) {
         holder.name.setText(ls.get(position).getName());
         holder.time.setText(ls.get(position).getTime());
-        holder.rowww.setOnClickListener(new View.OnClickListener() {
+        holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(c, position + "", Toast.LENGTH_SHORT).show();
@@ -49,13 +50,13 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, time;
-        LinearLayout rowww;
+        RelativeLayout row;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             time = itemView.findViewById(R.id.time);
-            rowww = itemView.findViewById(R.id.row);
+            row = itemView.findViewById(R.id.row);
         }
     }
 }
