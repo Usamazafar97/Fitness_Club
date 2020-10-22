@@ -1,24 +1,23 @@
 package com.example.fitnessclub;
 
 
-public class ManageTimeSlotData {
+public class ViewSceduleData {
 
     private String name, time;
-//    private int pic;
+    private int pic;
 
-//    public int getPic() {
-//        return pic;
-//    }
-//
-//    public void setPic(int pic) {
-//        this.pic = pic;
-//    }
+    public int getPic() {
+        return pic;
+    }
 
-    public ManageTimeSlotData(String name, String time) {
+    public void setPic(int pic) {
+        this.pic = pic;
+    }
+
+    public ViewSceduleData(String name, String time, int pic) {
         this.name = name;
         this.time = time;
-//        this.pic = pic;
-
+        this.pic = pic;
 
     }
 
@@ -39,3 +38,4 @@ public class ManageTimeSlotData {
     }
 
 }
+

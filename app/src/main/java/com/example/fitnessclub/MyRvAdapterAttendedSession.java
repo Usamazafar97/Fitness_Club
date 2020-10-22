@@ -5,8 +5,6 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,25 +16,25 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterManageTimeslot.MyViewHolder> {
-    List<ManageTimeSlotData> ls;
+public class MyRvAdapterAttendedSession extends RecyclerView.Adapter<MyRvAdapterAttendedSession.MyViewHolder> {
+    List<AttentedSessionData> ls;
     Context c;
 
-    public MyRvAdapterManageTimeslot(List<ManageTimeSlotData> ls, Context c) {
+    public MyRvAdapterAttendedSession(List<AttentedSessionData> ls, Context c) {
         this.c = c;
         this.ls = ls;
     }
 
     @NonNull
     @Override
-    public MyRvAdapterManageTimeslot.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemrow = LayoutInflater.from(c).inflate(R.layout.manage_timeslot_row, parent, false);
+    public MyRvAdapterAttendedSession.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemrow = LayoutInflater.from(c).inflate(R.layout.manage_attended_session_row, parent, false);
         return new MyViewHolder(itemrow);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(@NonNull MyRvAdapterManageTimeslot.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyRvAdapterAttendedSession.MyViewHolder holder, final int position) {
         holder.time.setText(ls.get(position).getTime());
         holder.name.setText(ls.get(position).getName());
         holder.row.setOnClickListener(new View.OnClickListener() {
@@ -68,4 +66,3 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
         }
     }
 }
-

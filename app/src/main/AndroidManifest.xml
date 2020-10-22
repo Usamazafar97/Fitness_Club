@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ManageTrainer">
+        <activity android:name=".ViewSchedule">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ManageTrainee"/>
-        <activity android:name=".ManageTimeslot" />
+        <activity android:name=".AttendedSessions">
+        </activity>
+        <activity android:name=".ManageTrainer"></activity>
+        <activity android:name=".ManageTrainee" />
+        <activity android:name=".ManageTimeslot"></activity>
         <activity android:name=".CancelReservation" />
         <activity android:name=".SignUp" />
         <activity android:name=".LogIn" />

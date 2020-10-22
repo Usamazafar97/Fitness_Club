@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,25 +17,25 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterManageTimeslot.MyViewHolder> {
-    List<ManageTimeSlotData> ls;
+public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterViewSchedule.MyViewHolder> {
+    List<ViewSceduleData> ls;
     Context c;
 
-    public MyRvAdapterManageTimeslot(List<ManageTimeSlotData> ls, Context c) {
+    public MyRvAdapterViewSchedule(List<ViewSceduleData> ls, Context c) {
         this.c = c;
         this.ls = ls;
     }
 
     @NonNull
     @Override
-    public MyRvAdapterManageTimeslot.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemrow = LayoutInflater.from(c).inflate(R.layout.manage_timeslot_row, parent, false);
-        return new MyViewHolder(itemrow);
+    public MyRvAdapterViewSchedule.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemrow = LayoutInflater.from(c).inflate(R.layout.view_schedule_row, parent, false);
+        return new MyRvAdapterViewSchedule.MyViewHolder(itemrow);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(@NonNull MyRvAdapterManageTimeslot.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyRvAdapterViewSchedule.MyViewHolder holder, final int position) {
         holder.time.setText(ls.get(position).getTime());
         holder.name.setText(ls.get(position).getName());
         holder.row.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +45,7 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
             }
         });
 
-//        holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
+        holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
     }
 
     @Override
@@ -57,14 +56,14 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, time;
         RelativeLayout row;
-//        ImageView ivPic;
+        ImageView ivPic;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             time = itemView.findViewById(R.id.time);
             row = itemView.findViewById(R.id.row);
-//            ivPic = itemView.findViewById(R.id.iv_pic);
+            ivPic = itemView.findViewById(R.id.iv_pic);
         }
     }
 }

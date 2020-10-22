@@ -1,25 +1,11 @@
 package com.example.fitnessclub;
 
-
-public class ManageTimeSlotData {
-
+public class AttentedSessionData {
     private String name, time;
-//    private int pic;
 
-//    public int getPic() {
-//        return pic;
-//    }
-//
-//    public void setPic(int pic) {
-//        this.pic = pic;
-//    }
-
-    public ManageTimeSlotData(String name, String time) {
+    public AttentedSessionData(String name, String time) {
         this.name = name;
         this.time = time;
-//        this.pic = pic;
-
-
     }
 
     public String getName() {
