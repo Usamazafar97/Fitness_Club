@@ -88,7 +88,7 @@
             android:textStyle="bold" />
 
 
-        <EditText
+        <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -102,13 +102,13 @@
             android:drawableRight="@drawable/ic_drop_down_arrow"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="  Trainer Name"
+            android:hint="  Trainer Name"
             android:textColor="#ffff"
+            android:textColorHint="#ffff"
             android:textSize="24dp"
             android:textStyle="bold" />
 
-        <EditText
-
+        <TextView
             android:id="@+id/select_timeslot"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -123,12 +123,13 @@
             android:drawableRight="@drawable/ic_drop_down_arrow"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="  Select Timeslot"
+            android:hint="  Select Timeslot"
             android:textColor="#ffff"
+            android:textColorHint="#ffff"
             android:textSize="24dp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
 
             android:id="@+id/exercise_type"
             android:layout_width="match_parent"
@@ -144,8 +145,9 @@
             android:drawableRight="@drawable/ic_drop_down_arrow"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="  Excercise Type"
+            android:hint="  Excercise Type"
             android:textColor="#ffff"
+            android:textColorHint="#ffff"
             android:textSize="24dp"
             android:textStyle="bold" />
 
@@ -153,7 +155,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"></RelativeLayout>
+            android:layout_height="30dp">
+
+        </RelativeLayout>
 
 
     </LinearLayout>
