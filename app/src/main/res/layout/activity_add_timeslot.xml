@@ -60,9 +60,10 @@
             android:background="@drawable/round_text"
             android:drawableLeft="@drawable/ic_user_profile"
             android:paddingLeft="20dp"
-            android:text="  Name"
-            android:textColor="#ffff"
-            android:textSize="20dp"
+            android:textSize="24dp"
+            android:hint="  Name"
+            android:textColor="#FFFF"
+            android:textColorHint="#FFFF"
             android:textStyle="bold" />
 
         <EditText
@@ -79,8 +80,9 @@
             android:background="@drawable/round_text"
             android:drawableLeft="@drawable/ic_time"
             android:paddingLeft="20dp"
-            android:text="  Start Time"
-            android:textColor="#ffff"
+            android:hint="  Start Time"
+            android:textColorHint="#FFFF"
+            android:textColor="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold" />
 
@@ -98,8 +100,9 @@
             android:background="@drawable/round_text"
             android:drawableLeft="@drawable/ic_time"
             android:paddingLeft="20dp"
-            android:text="  End Time"
-            android:textColor="#ffff"
+            android:hint="  End Time"
+            android:textColor="#FFFF"
+            android:textColorHint="#ffff"
             android:textSize="24dp"
             android:textStyle="bold" />
 

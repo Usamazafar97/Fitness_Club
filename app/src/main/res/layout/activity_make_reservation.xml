@@ -50,19 +50,18 @@
                     android:gravity="center"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TextView>
+                    android:layout_height="wrap_content">
+
+                </TextView>
 
                 <TextView
                     android:background="#AD9614"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TextView>
+                    android:layout_height="wrap_content">
 
-
-
-
+                </TextView>
             </LinearLayout>
-
         </RelativeLayout>
         <RelativeLayout
 
@@ -82,6 +81,7 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/round_button"
+                android:padding="10dp"
                 android:text="Reservation"
                 android:textColor="@android:color/white"
                 android:textSize="20dp" />
@@ -152,7 +152,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"></RelativeLayout>
+            android:layout_height="30dp">
+
+        </RelativeLayout>
 
 
     </LinearLayout>

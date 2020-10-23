@@ -44,7 +44,8 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_user_profile"
-            android:text="  Name"
+            android:hint="  Name"
+            android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold">
@@ -59,7 +60,8 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_email"
-            android:text="  Email"
+            android:hint="  Email"
+            android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold">
@@ -74,7 +76,8 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_phone_contact"
-            android:text="  Phone No"
+            android:hint="  Phone No"
+            android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold">
@@ -89,7 +92,8 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_door_key"
-            android:text="  Password"
+            android:hint="  Password"
+            android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold">

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,8 @@ public class ManageTrainee extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ManageTrainee.this, "floatng button Clicked", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(), AddTrainee.class);
+                startActivity(i);
             }
         });
         contacts = new ArrayList<>();

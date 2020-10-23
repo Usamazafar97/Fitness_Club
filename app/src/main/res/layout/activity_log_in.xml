@@ -44,8 +44,9 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_user_profile"
-            android:text="  Username"
+            android:hint="  Username"
             android:textColor="#FFFF"
+            android:textColorHint="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold">
 
@@ -59,7 +60,8 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_door_key"
-            android:text="  Password"
+            android:hint="  Password"
+            android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"
             android:textStyle="bold">
@@ -78,7 +80,7 @@
             android:textSize="15dp"
             android:layout_marginRight="10dp"
             android:buttonTint="#FFFF"
-            android:textColor="#FFF" />
+            android:textColor="#FFFF" />
 
         <TextView
             android:id="@+id/login"
