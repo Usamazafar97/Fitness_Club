@@ -9,15 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReservationInfo">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ReservationInfo"/>
         <activity android:name=".TransectionInfo">
-
         </activity>
         <activity android:name=".ViewSchedule"></activity>
         <activity android:name=".AttendedSessions" />
@@ -38,7 +31,13 @@
         <activity android:name=".EditTimeslot" />
         <activity android:name=".TraineeLog" />
         <activity android:name=".AdminLog" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

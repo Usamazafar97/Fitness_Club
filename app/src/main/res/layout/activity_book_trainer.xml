@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"></TextView>
 
             <TextView
-                android:text="FeedBack"
+                android:text="Book Trainer"
                 android:textStyle="bold"
                 android:textColor="#FFFF"
                 android:textSize="20dp"
