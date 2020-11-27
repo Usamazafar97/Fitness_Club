@@ -3,7 +3,7 @@ package com.example.fitnessclub;
 
 public class ManageTimeSlotData {
 
-    private String name, time;
+    private String name, start_time,end_time;
 //    private int pic;
 
 //    public int getPic() {
@@ -14,12 +14,32 @@ public class ManageTimeSlotData {
 //        this.pic = pic;
 //    }
 
-    public ManageTimeSlotData(String name, String time) {
+    public ManageTimeSlotData(String name, String start_time) {
         this.name = name;
-        this.time = time;
+        this.start_time = start_time;
 //        this.pic = pic;
 
 
+    }
+
+    public ManageTimeSlotData() {
+        this.name = "";
+        this.start_time = "";
+        this.end_time = "";
+    }
+
+    public ManageTimeSlotData(String name, String start_time, String end_time) {
+        this.name = name;
+        this.start_time = start_time;
+        this.end_time = end_time;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
     }
 
     public String getName() {
@@ -30,12 +50,12 @@ public class ManageTimeSlotData {
         this.name = name;
     }
 
-    public String getTime() {
-        return time;
+    public String getStartTime() {
+        return start_time;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setStartTime(String start_time) {
+        this.start_time = start_time;
     }
 
 }

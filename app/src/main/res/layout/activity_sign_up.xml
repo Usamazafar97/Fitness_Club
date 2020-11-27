@@ -5,14 +5,13 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background1"
-    tools:context=".LogIn">
+    android:background="@drawable/background1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="10">
+        android:weightSum="11">
 
         <ImageView
             android:layout_width="match_parent"
@@ -126,6 +125,17 @@
             android:layout_width="match_parent"
             android:textStyle="italic|bold"
             android:layout_height="0dp"></TextView>
+
+        <TextView
+            android:id="@+id/sign_in"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="#FFFF"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="Already have an account? SignIn here"
+            android:textSize="18dp" />
 
 
     </LinearLayout>

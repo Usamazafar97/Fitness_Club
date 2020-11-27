@@ -49,15 +49,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"/>
 
-            <TextView
-                android:id="@+id/time"
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="4"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <TextView
+                android:id="@+id/start_time"
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="time"
                 android:textSize="18dp"
                 android:textColor="#FFFF"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_weight="0.2"
+                    android:text="-"
+                    android:textSize="18dp"
+                    android:textColor="#FFFF"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/end_time"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="time"
+                    android:textSize="18dp"
+                    android:textColor="#FFFF"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -69,6 +98,7 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/edit"
                 android:padding="5dp"
                 android:src="@drawable/ic_edit"
                 android:layout_weight="1"
@@ -76,6 +106,7 @@
                 android:layout_height="0dp"/>
 
             <ImageView
+                android:id="@+id/delete"
                 android:padding="5dp"
                 android:src="@drawable/ic_delete"
                 android:layout_weight="1"

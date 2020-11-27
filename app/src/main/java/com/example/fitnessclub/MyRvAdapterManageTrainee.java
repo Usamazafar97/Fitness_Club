@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,10 +18,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterManageTrainee.MyViewHolder> {
     List<ManageTraineeData> ls;
     Context c;
+    ManageTimeAdapterListen listener;
 
     public MyRvAdapterManageTrainee(List<ManageTraineeData> ls, Context c) {
         this.c = c;
         this.ls = ls;
+        this.listener= listener;
     }
 
     @NonNull
@@ -32,13 +35,31 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
 
     @Override
     public void onBindViewHolder(@NonNull MyRvAdapterManageTrainee.MyViewHolder holder, final int position) {
-        holder.name.setText(ls.get(position).getName());
-        holder.phno.setText(ls.get(position).getPhoneNo());
-        holder.email.setText(ls.get(position).getEmail());
+
+        final ManageTraineeData currentItem =ls.get(position);
+
+        holder.name.setText(currentItem.getName());
+        holder.phno.setText(currentItem.getPhoneNo());
+        holder.email.setText(currentItem.getEmail());
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(c, position + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemEditClick(currentItem);
+            }
+        });
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemDeleteClick(currentItem);
             }
         });
     }
@@ -50,6 +71,7 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, phno, email;
+        ImageView delete,edit;
         RelativeLayout row;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -58,7 +80,14 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
             phno = itemView.findViewById(R.id.phno);
             email = itemView.findViewById(R.id.email);
             row = itemView.findViewById(R.id.row);
+            delete = itemView.findViewById(R.id.delete);
+            edit = itemView.findViewById(R.id.edit);
         }
+    }
+
+    public interface  ManageTimeAdapterListen{
+        void onItemDeleteClick(ManageTraineeData deletItem);
+        void onItemEditClick(ManageTraineeData editItem);
     }
 }
 

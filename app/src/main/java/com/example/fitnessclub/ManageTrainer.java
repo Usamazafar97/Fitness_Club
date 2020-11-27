@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManageTrainer extends AppCompatActivity {
+public class ManageTrainer extends AppCompatActivity implements MyRvAdapterManageTrainer.ManageTimeAdapterListen {
     RecyclerView rv;
     Button add;
     List<ManageTrainerData> contacts;
@@ -41,7 +41,18 @@ public class ManageTrainer extends AppCompatActivity {
         rv = findViewById(R.id.rv);
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
-        MyRvAdapterManageTrainer adapter = new MyRvAdapterManageTrainer(contacts, this);
+        MyRvAdapterManageTrainer adapter = new MyRvAdapterManageTrainer(contacts, this, this);
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemDeleteClick(ManageTrainerData deletItem) {
+        Toast.makeText(this, "Delete clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemEditClick(ManageTrainerData editItem) {
+        Intent intent = new Intent(ManageTrainer.this,EditTrainer.class);
+        startActivity(intent);
     }
 }

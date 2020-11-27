@@ -14,9 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ManageTrainee extends AppCompatActivity {
+public class ManageTrainee extends AppCompatActivity implements MyRvAdapterManageTrainee.ManageTimeAdapterListen{
     RecyclerView rv;
     Button add;
+
+
     List<ManageTraineeData> contacts;
 
     @Override
@@ -44,5 +46,17 @@ public class ManageTrainee extends AppCompatActivity {
         rv.setLayoutManager(lm);
         MyRvAdapterManageTrainee adapter = new MyRvAdapterManageTrainee(contacts, this);
         rv.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemDeleteClick(ManageTraineeData deletItem) {
+        Toast.makeText(this, "Delete clicked", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onItemEditClick(ManageTraineeData editItem) {
+        Intent intent = new Intent(ManageTrainee.this,EditTrainee.class);
+        startActivity(intent);
     }
 }

@@ -32,7 +32,7 @@
         >
 
         <Button
-            android:id="@+id/edit"
+            android:id="@+id/add"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/address"
@@ -40,7 +40,7 @@
             android:layout_marginLeft="140dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/round_button"
-            android:text="Update"
+            android:text="Add"
             android:textColor="@android:color/white"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -66,7 +66,7 @@
 
         <EditText
 
-            android:id="@+id/email"
+            android:id="@+id/id"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@+id/name"
@@ -89,7 +89,7 @@
             android:id="@+id/phone_no"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/email"
+            android:layout_below="@+id/id"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
             android:drawableLeft="@drawable/ic_phone_contact"
@@ -118,7 +118,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/round_text"
             android:paddingLeft="20dp"
-            android:hint="  Phone No"
+            android:hint="  Address"
             android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"

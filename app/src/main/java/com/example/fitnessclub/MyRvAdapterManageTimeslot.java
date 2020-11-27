@@ -21,10 +21,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterManageTimeslot.MyViewHolder> {
     List<ManageTimeSlotData> ls;
     Context c;
+    ManageTimeAdapterListen listener;
 
     public MyRvAdapterManageTimeslot(List<ManageTimeSlotData> ls, Context c) {
         this.c = c;
         this.ls = ls;
+        this.listener= listener;
     }
 
     @NonNull
@@ -37,8 +39,12 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(@NonNull MyRvAdapterManageTimeslot.MyViewHolder holder, final int position) {
-        holder.time.setText(ls.get(position).getTime());
-        holder.name.setText(ls.get(position).getName());
+
+        final ManageTimeSlotData currentItem =ls.get(position);
+
+        holder.end_time.setText(currentItem.getEnd_time());
+        holder.start_time.setText(currentItem.getStartTime());
+        holder.name.setText(currentItem.getName());
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +52,29 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
             }
         });
 
+
+
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemEditClick(currentItem);
+            }
+        });
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemDeleteClick(currentItem);
+            }
+        });
+
 //        holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
+    }
+
+    public void setContactList( List<ManageTimeSlotData> contactList){
+        // ls.clear();
+        ls = contactList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -55,17 +83,26 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name, time;
+        TextView name, start_time,end_time;
+        ImageView delete,edit;
         RelativeLayout row;
 //        ImageView ivPic;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
-            time = itemView.findViewById(R.id.time);
+            start_time = itemView.findViewById(R.id.start_time);
+            end_time = itemView.findViewById(R.id.end_time);
             row = itemView.findViewById(R.id.row);
+            delete = itemView.findViewById(R.id.delete);
+            edit = itemView.findViewById(R.id.edit);
 //            ivPic = itemView.findViewById(R.id.iv_pic);
         }
+    }
+
+    public interface  ManageTimeAdapterListen{
+        void onItemDeleteClick(ManageTimeSlotData deletItem);
+        void onItemEditClick(ManageTimeSlotData editItem);
     }
 }
 
