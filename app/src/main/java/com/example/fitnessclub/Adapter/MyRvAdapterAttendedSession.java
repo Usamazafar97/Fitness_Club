@@ -1,14 +1,16 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Adapter;
 
 import android.content.Context;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.fitnessclub.AttentedSessionData;
+import com.example.fitnessclub.R;
 
 import java.util.List;
 
@@ -17,27 +19,26 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapterTransectionInfo.MyViewHolder> {
-    List<TransectionInfoData> ls;
+public class MyRvAdapterAttendedSession extends RecyclerView.Adapter<MyRvAdapterAttendedSession.MyViewHolder> {
+    List<AttentedSessionData> ls;
     Context c;
 
-    public MyRvAdapterTransectionInfo(List<TransectionInfoData> ls, Context c) {
+    public MyRvAdapterAttendedSession(List<AttentedSessionData> ls, Context c) {
         this.c = c;
         this.ls = ls;
     }
 
     @NonNull
     @Override
-    public MyRvAdapterTransectionInfo.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemrow = LayoutInflater.from(c).inflate(R.layout.transection_info_row, parent, false);
-        return new MyRvAdapterTransectionInfo.MyViewHolder(itemrow);
+    public MyRvAdapterAttendedSession.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemrow = LayoutInflater.from(c).inflate(R.layout.manage_attended_session_row, parent, false);
+        return new MyViewHolder(itemrow);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(@NonNull MyRvAdapterTransectionInfo.MyViewHolder holder, final int position) {
-        holder.id.setText(ls.get(position).getId());
-        holder.status.setText(ls.get(position).getStatus());
+    public void onBindViewHolder(@NonNull MyRvAdapterAttendedSession.MyViewHolder holder, final int position) {
+        holder.time.setText(ls.get(position).getTime());
         holder.name.setText(ls.get(position).getName());
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +47,7 @@ public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapter
             }
         });
 
-        holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
+//        holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
     }
 
     @Override
@@ -55,18 +56,16 @@ public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapter
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name, id, status;
+        TextView name, time;
         RelativeLayout row;
-        ImageView ivPic;
+//        ImageView ivPic;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
-            id = itemView.findViewById(R.id.id);
-            status = itemView.findViewById(R.id.status);
+            time = itemView.findViewById(R.id.time);
             row = itemView.findViewById(R.id.row);
-            ivPic = itemView.findViewById(R.id.iv_pic);
+//            ivPic = itemView.findViewById(R.id.iv_pic);
         }
     }
 }
-

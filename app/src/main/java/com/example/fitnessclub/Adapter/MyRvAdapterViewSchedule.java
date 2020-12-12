@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Adapter;
 
 import android.content.Context;
 import android.os.Build;
@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.fitnessclub.R;
+import com.example.fitnessclub.ViewSceduleData;
 
 import java.util.List;
 

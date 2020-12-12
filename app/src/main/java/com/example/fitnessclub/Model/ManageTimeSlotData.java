@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Model;
 
 
 public class ManageTimeSlotData {

@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainee;
+import com.example.fitnessclub.Model.ManageTraineeData;
+
 import java.util.ArrayList;
 import java.util.List;
 

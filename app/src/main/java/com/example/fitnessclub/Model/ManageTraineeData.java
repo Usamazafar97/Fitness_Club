@@ -1,9 +1,11 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Model;
 
-public class ManageTrainerData {
+
+public class ManageTraineeData {
+
     private String name, phno, email;
 
-    public ManageTrainerData(String name, String phno, String email) {
+    public ManageTraineeData(String name, String phno, String email) {
         this.name = name;
         this.phno = phno;
         this.email = email;
@@ -35,4 +37,3 @@ public class ManageTrainerData {
     }
 
 }
-

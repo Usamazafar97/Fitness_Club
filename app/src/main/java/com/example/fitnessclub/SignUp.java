@@ -58,7 +58,7 @@ public class SignUp extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()){
-                                Toast.makeText(SignUp.this, "SignUp unsuccessfull, Please try again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUp.this, "SignUp unsuccessful, Please try again", Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 startActivity(new Intent(SignUp.this,LogIn.class));

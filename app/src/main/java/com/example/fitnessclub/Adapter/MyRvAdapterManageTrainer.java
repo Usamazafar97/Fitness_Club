@@ -1,19 +1,23 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Model.ManageTimeSlotData;
+import com.example.fitnessclub.Model.ManageTrainerData;
+import com.example.fitnessclub.R;
+
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -35,6 +39,7 @@ public class MyRvAdapterManageTrainer extends RecyclerView.Adapter<MyRvAdapterMa
         return new MyViewHolder(itemrow);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(@NonNull MyRvAdapterManageTrainer.MyViewHolder holder, final int position) {
 
@@ -42,7 +47,7 @@ public class MyRvAdapterManageTrainer extends RecyclerView.Adapter<MyRvAdapterMa
 
 
         holder.name.setText(currentItem.getName());
-        holder.phno.setText(currentItem.getPhoneNo());
+        holder.phno.setText(currentItem.getPhno());
         holder.email.setText(currentItem.getEmail());
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +69,12 @@ public class MyRvAdapterManageTrainer extends RecyclerView.Adapter<MyRvAdapterMa
                 listener.onItemDeleteClick(currentItem);
             }
         });
+    }
+
+    public void setContactList( List<ManageTrainerData> contactList){
+        // ls.clear();
+        ls = contactList;
+        notifyDataSetChanged();
     }
 
     @Override
