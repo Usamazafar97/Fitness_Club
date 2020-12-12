@@ -6,9 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.example.fitnessclub.Model.ManageTraineeData;
+import com.example.fitnessclub.Model.ManageTrainerData;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.sql.Ref;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddTrainee extends AppCompatActivity {
     Button add;
+    EditText name,email,phone_no,address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +29,22 @@ public class AddTrainee extends AppCompatActivity {
         setContentView(R.layout.activity_add_trainee);
 
         add = findViewById(R.id.add);
+        name = findViewById(R.id.name);
+        email = findViewById(R.id.email);
+        phone_no = findViewById(R.id.phone_no);
+        address = findViewById(R.id.address);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //fitnessclub-f74fe
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Trainees");
+                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                String userId=user.getUid();
+                myRef.child(userId).setValue(new ManageTraineeData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),address.getText().toString(),"","","","","","","","","",""));
+
                 Intent intent = new Intent(AddTrainee.this,ManageTrainee.class);
                 startActivity(intent);
             }

@@ -1,6 +1,7 @@
 package com.example.fitnessclub.Adapter;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitnessclub.Model.ManageTraineeData;
+import com.example.fitnessclub.Model.ManageTrainerData;
 import com.example.fitnessclub.R;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -36,6 +39,7 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
         return new MyViewHolder(itemrow);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(@NonNull MyRvAdapterManageTrainee.MyViewHolder holder, final int position) {
 
@@ -65,6 +69,12 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
                 listener.onItemDeleteClick(currentItem);
             }
         });
+    }
+
+    public void setContactList( List<ManageTraineeData> contactList){
+        // ls.clear();
+        ls = contactList;
+        notifyDataSetChanged();
     }
 
     @Override

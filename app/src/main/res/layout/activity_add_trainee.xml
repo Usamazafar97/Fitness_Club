@@ -34,7 +34,7 @@
         >
 
         <Button
-            android:id="@+id/ad"
+            android:id="@+id/add"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/address"
@@ -120,7 +120,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/round_text"
             android:paddingLeft="20dp"
-            android:hint="  Phone No"
+            android:hint="  Address"
             android:textColorHint="#ffff"
             android:textColor="#FFFF"
             android:textSize="24dp"

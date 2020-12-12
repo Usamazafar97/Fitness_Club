@@ -27,6 +27,8 @@ public class LogIn extends AppCompatActivity {
     TextView sign_up_option;
     FirebaseAuth m_firebaseAuth;
 
+    Session session;
+
     private FirebaseAuth.AuthStateListener m_AuthStateListener;
 
     @Override
@@ -40,6 +42,8 @@ public class LogIn extends AppCompatActivity {
         logInTrainee = findViewById(R.id.login_trainee);
         sign_up_option = findViewById(R.id.sign_up);
 
+        session = new Session(this);
+
         m_firebaseAuth =  FirebaseAuth.getInstance();
 
         m_AuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -51,8 +55,15 @@ public class LogIn extends AppCompatActivity {
                 if (m_FireaseUser != null){
                     Toast.makeText(LogIn.this, "You are logged in", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(LogIn.this,AdminLog.class);
-                    startActivity(intent);
+                    if (session.getUserStatus().equals("admin")){
+                        Intent intent = new Intent(LogIn.this,AdminLog.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(LogIn.this,TraineeLog.class);
+                        startActivity(intent);
+                    }
+
                 }
                 else{
 
@@ -66,7 +77,7 @@ public class LogIn extends AppCompatActivity {
         logInAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String temp_email = email.getText().toString();
+                final String temp_email = email.getText().toString();
                 String temp_password = password.getText().toString();
 
                 if (temp_email.isEmpty()){
@@ -90,6 +101,8 @@ public class LogIn extends AppCompatActivity {
 
                             }
                             else {
+                                session.setUserStatus("admin");
+                                session.setEmail(temp_email);
                                 Intent intent = new Intent(LogIn.this,AdminLog.class);
                                 startActivity(intent);
                             }
@@ -129,6 +142,7 @@ public class LogIn extends AppCompatActivity {
 
                             }
                             else {
+                                session.setUserStatus("trainee");
                                 Intent intent = new Intent(LogIn.this,TraineeLog.class);
                                 startActivity(intent);
                             }

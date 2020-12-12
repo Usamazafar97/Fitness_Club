@@ -20,6 +20,7 @@ public class AddTrainer extends AppCompatActivity {
     Spinner ExcerciseTypeSpinner,timeSpinner;
     EditText name,email,phone_no;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

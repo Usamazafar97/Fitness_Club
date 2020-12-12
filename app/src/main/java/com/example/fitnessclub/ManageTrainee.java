@@ -1,5 +1,6 @@
 package com.example.fitnessclub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +12,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainee;
+import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainer;
 import com.example.fitnessclub.Model.ManageTraineeData;
+import com.example.fitnessclub.Model.ManageTrainerData;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +32,7 @@ public class ManageTrainee extends AppCompatActivity implements MyRvAdapterManag
 
 
     List<ManageTraineeData> contacts;
+    MyRvAdapterManageTrainee adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +47,40 @@ public class ManageTrainee extends AppCompatActivity implements MyRvAdapterManag
                 startActivity(i);
             }
         });
+
         contacts = new ArrayList<>();
-        contacts.add(new ManageTraineeData("Noor Saqib"    , "03335109701" , "Noor.saqib@nu.edu.pk"));
-        contacts.add(new ManageTraineeData("Zara Akhtar"   , "03335109701" , "Zara.akhtar@nu.edu.pk"));
-        contacts.add(new ManageTraineeData("Sohail Ahmed"  , "03335109701" , "Sohail.ahmed@nu.edu.pk"));
-        contacts.add(new ManageTraineeData("Sami Bokhari"  , "03335109701" , "Sami.bokhari@nu.edu.pk"));
-        contacts.add(new ManageTraineeData("Altaf Hussain" , "03335109701" , "Altaf.hussain@nu.edu.pk"));
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Trainees");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot D : snapshot.getChildren()){
+
+                    //ManageTraineeData obj = ;
+                    contacts.add(D.getValue(ManageTraineeData.class));
+                    adapter.setContactList(contacts);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+//        contacts.add(new ManageTraineeData("Noor Saqib"    , "03335109701" , "Noor.saqib@nu.edu.pk"));
+//        contacts.add(new ManageTraineeData("Zara Akhtar"   , "03335109701" , "Zara.akhtar@nu.edu.pk"));
+//        contacts.add(new ManageTraineeData("Sohail Ahmed"  , "03335109701" , "Sohail.ahmed@nu.edu.pk"));
+//        contacts.add(new ManageTraineeData("Sami Bokhari"  , "03335109701" , "Sami.bokhari@nu.edu.pk"));
+//        contacts.add(new ManageTraineeData("Altaf Hussain" , "03335109701" , "Altaf.hussain@nu.edu.pk"));
 
         rv = findViewById(R.id.rv);
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
-        MyRvAdapterManageTrainee adapter = new MyRvAdapterManageTrainee(contacts, this);
+        adapter = new MyRvAdapterManageTrainee(contacts, this);
         rv.setAdapter(adapter);
     }
 

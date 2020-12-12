@@ -25,7 +25,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="400dp"
         android:layout_below="@id/upperBox"
         android:layout_margin="20dp"
         android:background="@drawable/round_corners"
@@ -35,7 +35,7 @@
             android:id="@+id/add"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ExcerciseTypeSpinner"
+            android:layout_below="@+id/phone_no"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="50dp"
@@ -61,8 +61,7 @@
             android:hint="  Name"
             android:textColorHint="#ffff"
             android:textColor="#FFFF"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="16dp" />
 
         <EditText
 
@@ -81,8 +80,7 @@
             android:hint="  Email"
             android:textColorHint="#FFFF"
             android:textColor="#FFFF"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textSize="16dp" />
 
         <EditText
 
@@ -101,48 +99,47 @@
             android:hint="  Phone No"
             android:textColorHint="#FFFF"
             android:textColor="#FFFF"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textSize="16dp" />
 
-        <Spinner
+<!--        <Spinner-->
 
-            android:id="@+id/timeSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/phone_no"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="20dp"
-            android:drawableLeft="@drawable/ic_time"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_text"
-            android:paddingLeft="20dp"
-            android:textColorHint="#FFFF"
-            android:textColor="#FFFF"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:entries="@array/time_array"
-            android:prompt="@string/time_prompt" />
+<!--            android:id="@+id/timeSpinner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_below="@+id/phone_no"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginHorizontal="20dp"-->
+<!--            android:drawableLeft="@drawable/ic_time"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginRight="50dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="@drawable/round_text"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:textColorHint="#FFFF"-->
+<!--            android:textColor="#FFFF"-->
+<!--            android:textSize="24dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:entries="@array/time_array"-->
+<!--            android:prompt="@string/time_prompt" />-->
 
-        <Spinner
+<!--        <Spinner-->
 
-            android:id="@+id/ExcerciseTypeSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/timeSpinner"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_text"
-            android:paddingLeft="20dp"
-            android:textColor="#FFFF"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:entries="@array/excercise_type_array"
-            android:prompt="@string/execrcise_type_prompt"/>
+<!--            android:id="@+id/ExcerciseTypeSpinner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_below="@+id/timeSpinner"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginHorizontal="20dp"-->
+<!--            android:layout_marginLeft="50dp"-->
+<!--            android:layout_marginRight="50dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:background="@drawable/round_text"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:textColor="#FFFF"-->
+<!--            android:textSize="24dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:entries="@array/excercise_type_array"-->
+<!--            android:prompt="@string/execrcise_type_prompt"/>-->
 
     </RelativeLayout>
 

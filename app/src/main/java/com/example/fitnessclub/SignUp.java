@@ -5,20 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Model.ManageTraineeData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
     EditText email, password;
+    EditText name,phone_no;
     TextView sign_up;
     TextView sign_in_option;
     FirebaseAuth m_firebaseAuth;
@@ -29,6 +35,8 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         email = findViewById(R.id.email);
+        name = findViewById(R.id.name);
+        phone_no = findViewById(R.id.phno);
         password = findViewById(R.id.password);
         sign_up = findViewById(R.id.register);
         sign_in_option = findViewById(R.id.sign_in);
@@ -61,6 +69,14 @@ public class SignUp extends AppCompatActivity {
                                 Toast.makeText(SignUp.this, "SignUp unsuccessful, Please try again", Toast.LENGTH_SHORT).show();
                             }
                             else{
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference myRef = database.getReference("Trainees");
+                                //FirebaseUser user= ;
+                                String userId = m_firebaseAuth.getCurrentUser().getUid();
+
+                                Log.d("signup",userId);
+                                myRef.child(userId).setValue(new ManageTraineeData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),"","","","","","","","","","",""));
+                                Log.d("signup","after");
                                 startActivity(new Intent(SignUp.this,LogIn.class));
 
                             }

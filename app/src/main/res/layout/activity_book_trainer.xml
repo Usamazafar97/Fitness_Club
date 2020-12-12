@@ -74,10 +74,10 @@
         android:background="@drawable/round_corners">
 
         <Button
-            android:id="@+id/edit"
+            android:id="@+id/book"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/exercise_type"
+            android:layout_below="@+id/ExcerciseTypeSpinner"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="50dp"
@@ -108,8 +108,8 @@
             android:textSize="24dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/select_timeslot"
+        <Spinner
+            android:id="@+id/timeSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@+id/name"
@@ -120,21 +120,22 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_text"
-            android:drawableRight="@drawable/ic_drop_down_arrow"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:hint="  Select Timeslot"
             android:textColor="#ffff"
             android:textColorHint="#ffff"
             android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:entries="@array/time_array"
+            android:prompt="@string/time_prompt"/>
 
-        <TextView
+        <Spinner
 
-            android:id="@+id/exercise_type"
+            android:id="@+id/ExcerciseTypeSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/select_timeslot"
+            android:layout_below="@+id/timeSpinner"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
             android:drawableLeft="@drawable/ic_time"
@@ -142,23 +143,25 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_text"
-            android:drawableRight="@drawable/ic_drop_down_arrow"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:hint="  Excercise Type"
             android:textColor="#ffff"
             android:textColorHint="#ffff"
             android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:entries="@array/excercise_type_array"
+            android:prompt="@string/execrcise_type_prompt"
+                />
 
-    </RelativeLayout>
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
 
+                </RelativeLayout>
+
+
+            </LinearLayout>
         </RelativeLayout>
-
-
-    </LinearLayout>
-</RelativeLayout>

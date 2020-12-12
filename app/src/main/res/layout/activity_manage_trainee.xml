@@ -50,19 +50,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
-            <Button
-                android:background="@drawable/round_camera"
-                android:id="@+id/add"
-                android:textColor="#FFFF"
-                android:layout_gravity="right"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:textSize="50dp"
-                android:textStyle="bold"
-                android:layout_margin="50dp"
-                android:text="+"/>
+<!--            <Button-->
+<!--                android:background="@drawable/round_camera"-->
+<!--                android:id="@+id/add"-->
+<!--                android:textColor="#FFFF"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:textSize="50dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_margin="50dp"-->
+<!--                android:text="+"/>-->
 
         </RelativeLayout>
     </LinearLayout>

@@ -47,10 +47,6 @@ public class ManageTrainer extends AppCompatActivity implements MyRvAdapterManag
         });
         contacts = new ArrayList<>();
 
-        System.out.println("before getting the data");
-        Log.d("ManageTrainer","inbetween getting the data");
-
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Trainers");
 
@@ -59,22 +55,9 @@ public class ManageTrainer extends AppCompatActivity implements MyRvAdapterManag
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 ManageTrainerData c1 = dataSnapshot.getValue(ManageTrainerData.class);
 
-                System.out.println("inbetween getting the data");
-                Log.d("ManageTrainer","inbetween getting the data");
-                //Toast.makeText(ManageTrainer.this, c1.getName() + c1.getPhno() + c1.getEmail(), Toast.LENGTH_SHORT).show();
-//                Log.d("MainActivity","Name: " + c1.getName());
-//                Log.d("MainActivity","Email: " + c1.getEmail());
-//                Log.d("MainActivity","Phone number: " + c1.getPhno());
-//                Log.d("MainActivity","Previous Post ID: " + prevChildKey);
-//
-//                Log.d("MainActivity","In database");
-                //contacts.add(c1);
                 contacts.add(new ManageTrainerData(c1.getName() , c1.getPhno() , c1.getEmail()));
                 adapter.setContactList(contacts);
             }
-
-            //added to the recycler list
-
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
@@ -99,7 +82,6 @@ public class ManageTrainer extends AppCompatActivity implements MyRvAdapterManag
             }
         });
 
-        System.out.println("after getting the data");
 
 
 //        contacts.add(new ManageTrainerData("Hafsa Saqib" , "03335109701" , "hafsa.saqib@nu.edu.pk"));

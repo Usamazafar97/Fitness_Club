@@ -10,6 +10,7 @@
 
     <string name="time_prompt">Choose a timeslot</string>
     <string name="execrcise_type_prompt">Choose excercise type</string>
+    <string name="membership_type_prompt">Choose membership type</string>
 
     <string-array name="time_array">
         <item>Choose a timeslot</item>
@@ -32,6 +33,13 @@
         <item>Crunches-Cardio-Lunges</item>
         <item>Pushups-Walking-Cardio</item>
         <item>Bent-Over Row-Squates-Crunches</item>
+    </string-array>
+
+    <string-array name="membership_type_array">
+        <item>Choose membership type</item>
+        <item>Gold </item>
+        <item>Silver</item>
+        <item>Bronze</item>
     </string-array>
 
 </resources>
