@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Edit;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,19 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class EditTrainer extends AppCompatActivity {
+import com.example.fitnessclub.Manage.ManageTimeslot;
+import com.example.fitnessclub.R;
+
+public class EditTimeslot extends AppCompatActivity {
+
     Button edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_trainer);
+        setContentView(R.layout.activity_edit_timeslot);
 
         edit = findViewById(R.id.edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EditTrainer.this,ManageTrainer.class);
+                Intent intent = new Intent(EditTimeslot.this, ManageTimeslot.class);
                 startActivity(intent);
             }
         });

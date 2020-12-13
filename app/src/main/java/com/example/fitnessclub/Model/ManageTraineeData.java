@@ -6,12 +6,33 @@ public class ManageTraineeData {
     private String name, phno, email;
     String address, trainerName, selectTimeSlot, ExcerciseType, membershiptype, membershipStartDate, membershipEndDate, IstransPaid;
     String mon_attend, tue_attend, wed_attend;
-    String mon_train, tue_train, wed_train;
+    String mon_train, tue_train, wed_train,feedback;
 
     public ManageTraineeData(String name, String phno, String email) {
         this.name = name;
         this.phno = phno;
         this.email = email;
+    }
+
+    public ManageTraineeData(String name, String phno, String email, String address, String trainerName, String selectTimeSlot, String excerciseType, String membershiptype, String membershipStartDate, String membershipEndDate, String istransPaid, String mon_attend, String tue_attend, String wed_attend, String mon_train, String tue_train, String wed_train, String feedback) {
+        this.name = name;
+        this.phno = phno;
+        this.email = email;
+        this.address = address;
+        this.trainerName = trainerName;
+        this.selectTimeSlot = selectTimeSlot;
+        this.ExcerciseType = excerciseType;
+        this.membershiptype = membershiptype;
+        this.membershipStartDate = membershipStartDate;
+        this.membershipEndDate = membershipEndDate;
+        this.IstransPaid = istransPaid;
+        this.mon_attend = mon_attend;
+        this.tue_attend = tue_attend;
+        this.wed_attend = wed_attend;
+        this.mon_train = mon_train;
+        this.tue_train = tue_train;
+        this.wed_train = wed_train;
+        this.feedback = feedback;
     }
 
     public ManageTraineeData(String name, String phno, String email, String address, String trainerName, String selectTimeSlot, String excerciseType, String membershiptype, String membershipStartDate, String membershipEndDate, String istransPaid, String mon_attend, String tue_attend, String wed_attend, String mon_train, String tue_train, String wed_train) {
@@ -21,17 +42,18 @@ public class ManageTraineeData {
         this.address = address;
         this.trainerName = trainerName;
         this.selectTimeSlot = selectTimeSlot;
-        ExcerciseType = excerciseType;
+        this.ExcerciseType = excerciseType;
         this.membershiptype = membershiptype;
         this.membershipStartDate = membershipStartDate;
         this.membershipEndDate = membershipEndDate;
-        IstransPaid = istransPaid;
+        this.IstransPaid = istransPaid;
         this.mon_attend = mon_attend;
         this.tue_attend = tue_attend;
         this.wed_attend = wed_attend;
         this.mon_train = mon_train;
         this.tue_train = tue_train;
         this.wed_train = wed_train;
+
     }
 
     public ManageTraineeData(String name, String phno, String email, String address, String trainerName, String selectTimeSlot, String excerciseType, String membershiptype, String membershipStartDate, String membershipEndDate, String istransPaid, String mon_attend, String tue_attend, String wed_attend) {
@@ -66,6 +88,14 @@ public class ManageTraineeData {
         this.membershipStartDate = membershipStartDate;
         this.membershipEndDate = membershipEndDate;
         this.IstransPaid = istransPaid;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 
     public String getMon_train() {

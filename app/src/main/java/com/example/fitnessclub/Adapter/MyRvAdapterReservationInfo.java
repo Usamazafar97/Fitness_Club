@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitnessclub.R;
-import com.example.fitnessclub.ReservationInfoData;
+import com.example.fitnessclub.Model.ReservationInfoData;
 
 import java.util.List;
 

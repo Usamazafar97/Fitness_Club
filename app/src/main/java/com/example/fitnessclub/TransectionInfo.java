@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.example.fitnessclub.Adapter.MyRvAdapterTransectionInfo;
+import com.example.fitnessclub.Model.TransectionInfoData;
 
 import java.util.ArrayList;
 import java.util.List;

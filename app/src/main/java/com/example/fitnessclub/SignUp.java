@@ -75,7 +75,7 @@ public class SignUp extends AppCompatActivity {
                                 String userId = m_firebaseAuth.getCurrentUser().getUid();
 
                                 Log.d("signup",userId);
-                                myRef.child(userId).setValue(new ManageTraineeData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),"","","","","","","","","","",""));
+                                myRef.child(userId).setValue(new ManageTraineeData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),"","","","","","","","","","","","","","",""));
                                 Log.d("signup","after");
                                 startActivity(new Intent(SignUp.this,LogIn.class));
 

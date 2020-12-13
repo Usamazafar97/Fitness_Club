@@ -5,13 +5,15 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Model.ManageTrainerData;
 import com.example.fitnessclub.R;
-import com.example.fitnessclub.ViewSceduleData;
+import com.example.fitnessclub.Model.ViewSceduleData;
 
 import java.util.List;
 
@@ -48,7 +50,20 @@ public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterVie
             }
         });
 
+        holder.attended.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(c, position + "Attended Pressed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
+    }
+
+    public void setContactList( List<ViewSceduleData> contactList){
+        // ls.clear();
+        ls = contactList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -60,6 +75,7 @@ public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterVie
         TextView name, time;
         RelativeLayout row;
         ImageView ivPic;
+        Button attended;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +83,7 @@ public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterVie
             time = itemView.findViewById(R.id.time);
             row = itemView.findViewById(R.id.row);
             ivPic = itemView.findViewById(R.id.iv_pic);
+            attended = itemView.findViewById(R.id.attended);
         }
     }
 }

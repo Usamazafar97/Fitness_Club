@@ -54,6 +54,7 @@ public class MakeReservation extends AppCompatActivity {
                 myRef.child(userId).child("membershipEndDate").setValue(ending_date.getText().toString());
 
                 Intent intent = new Intent(MakeReservation.this,TraineeLog.class);
+                startActivity(intent);
 
             }
         });

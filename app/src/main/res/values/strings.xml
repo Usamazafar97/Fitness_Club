@@ -11,6 +11,7 @@
     <string name="time_prompt">Choose a timeslot</string>
     <string name="execrcise_type_prompt">Choose excercise type</string>
     <string name="membership_type_prompt">Choose membership type</string>
+    <string name="trainer_prompt">Select a trainer</string>
 
     <string-array name="time_array">
         <item>Choose a timeslot</item>

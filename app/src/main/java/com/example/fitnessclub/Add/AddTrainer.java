@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Add;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.fitnessclub.Model.ManageTimeSlotData;
+import com.example.fitnessclub.Manage.ManageTrainer;
 import com.example.fitnessclub.Model.ManageTrainerData;
+import com.example.fitnessclub.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,7 +53,7 @@ public class AddTrainer extends AppCompatActivity {
 
                 myRef.push().setValue(new ManageTrainerData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),timeslot,excerciseType));
 
-                Intent intent = new Intent(AddTrainer.this,ManageTrainer.class);
+                Intent intent = new Intent(AddTrainer.this, ManageTrainer.class);
                 startActivity(intent);
             }
         });

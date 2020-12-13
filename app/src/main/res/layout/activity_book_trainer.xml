@@ -88,8 +88,8 @@
             android:textStyle="bold" />
 
 
-        <TextView
-            android:id="@+id/name"
+        <Spinner
+            android:id="@+id/trainerSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
@@ -99,20 +99,17 @@
             android:layout_marginTop="60dp"
             android:background="@drawable/round_text"
             android:drawableLeft="@drawable/ic_user_profile"
-            android:drawableRight="@drawable/ic_drop_down_arrow"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:hint="  Trainer Name"
             android:textColor="#ffff"
             android:textColorHint="#ffff"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:prompt="@string/trainer_prompt" />
 
         <Spinner
             android:id="@+id/timeSpinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/name"
+            android:layout_below="@+id/trainerSpinner"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="20dp"
             android:drawableLeft="@drawable/ic_time"

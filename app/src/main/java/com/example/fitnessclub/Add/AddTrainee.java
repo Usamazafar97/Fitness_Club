@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Add;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,16 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.fitnessclub.Manage.ManageTrainee;
 import com.example.fitnessclub.Model.ManageTraineeData;
-import com.example.fitnessclub.Model.ManageTrainerData;
+import com.example.fitnessclub.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.sql.Ref;
-import java.util.HashMap;
-import java.util.Map;
 
 public class AddTrainee extends AppCompatActivity {
     Button add;
@@ -45,7 +42,7 @@ public class AddTrainee extends AppCompatActivity {
                 String userId=user.getUid();
                 myRef.child(userId).setValue(new ManageTraineeData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),address.getText().toString(),"","","","","","","","","",""));
 
-                Intent intent = new Intent(AddTrainee.this,ManageTrainee.class);
+                Intent intent = new Intent(AddTrainee.this, ManageTrainee.class);
                 startActivity(intent);
             }
         });

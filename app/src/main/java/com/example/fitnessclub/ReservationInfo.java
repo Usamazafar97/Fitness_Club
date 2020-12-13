@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.example.fitnessclub.Adapter.MyRvAdapterReservationInfo;
+import com.example.fitnessclub.Model.ReservationInfoData;
 
 import java.util.ArrayList;
 import java.util.List;

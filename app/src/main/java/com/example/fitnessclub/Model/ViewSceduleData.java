@@ -1,11 +1,24 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Model;
 
-public class AttentedSessionData {
+
+public class ViewSceduleData {
+
     private String name, time;
+    private int pic;
 
-    public AttentedSessionData(String name, String time) {
+    public int getPic() {
+        return pic;
+    }
+
+    public void setPic(int pic) {
+        this.pic = pic;
+    }
+
+    public ViewSceduleData(String name, String time, int pic) {
         this.name = name;
         this.time = time;
+        this.pic = pic;
+
     }
 
     public String getName() {
@@ -25,3 +38,4 @@ public class AttentedSessionData {
     }
 
 }
+

@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fitnessclub.AttentedSessionData;
+import com.example.fitnessclub.Model.AttentedSessionData;
 import com.example.fitnessclub.R;
 
 import java.util.List;

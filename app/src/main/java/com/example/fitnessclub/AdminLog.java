@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Manage.ManageTimeslot;
+import com.example.fitnessclub.Manage.ManageTrainee;
+import com.example.fitnessclub.Manage.ManageTrainer;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminLog extends AppCompatActivity {

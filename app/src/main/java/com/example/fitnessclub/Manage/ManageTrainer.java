@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Manage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,15 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.fitnessclub.Adapter.MyRvAdapterManageTimeslot;
 import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainer;
-import com.example.fitnessclub.Model.ManageTimeSlotData;
+import com.example.fitnessclub.Add.AddTrainer;
+import com.example.fitnessclub.Edit.EditTrainer;
 import com.example.fitnessclub.Model.ManageTrainerData;
+import com.example.fitnessclub.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -104,7 +104,7 @@ public class ManageTrainer extends AppCompatActivity implements MyRvAdapterManag
 
     @Override
     public void onItemEditClick(ManageTrainerData editItem) {
-        Intent intent = new Intent(ManageTrainer.this,EditTrainer.class);
+        Intent intent = new Intent(ManageTrainer.this, EditTrainer.class);
         startActivity(intent);
     }
 }

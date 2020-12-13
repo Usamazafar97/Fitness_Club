@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Manage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +12,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainee;
-import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainer;
+import com.example.fitnessclub.Add.AddTrainee;
+import com.example.fitnessclub.Edit.EditTrainee;
 import com.example.fitnessclub.Model.ManageTraineeData;
-import com.example.fitnessclub.Model.ManageTrainerData;
-import com.google.firebase.database.ChildEventListener;
+import com.example.fitnessclub.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -92,7 +92,7 @@ public class ManageTrainee extends AppCompatActivity implements MyRvAdapterManag
 
     @Override
     public void onItemEditClick(ManageTraineeData editItem) {
-        Intent intent = new Intent(ManageTrainee.this,EditTrainee.class);
+        Intent intent = new Intent(ManageTrainee.this, EditTrainee.class);
         startActivity(intent);
     }
 }

@@ -59,6 +59,7 @@
                 android:layout_height="0dp"/>
 
             <Button
+                android:id="@+id/attended"
                 android:text="Attended"
                 android:layout_gravity="right"
                 android:background="@drawable/round_camera"

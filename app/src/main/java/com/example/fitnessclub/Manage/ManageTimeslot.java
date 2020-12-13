@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Manage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.fitnessclub.Adapter.MyRvAdapterManageTimeslot;
+import com.example.fitnessclub.Add.AddTimeslot;
+import com.example.fitnessclub.Edit.EditTimeslot;
 import com.example.fitnessclub.Model.ManageTimeSlotData;
+import com.example.fitnessclub.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -112,7 +115,7 @@ public class ManageTimeslot extends AppCompatActivity implements MyRvAdapterMana
 
     @Override
     public void onItemEditClick(ManageTimeSlotData editItem) {
-        Intent intent = new Intent(ManageTimeslot.this,EditTimeslot.class);
+        Intent intent = new Intent(ManageTimeslot.this, EditTimeslot.class);
         startActivity(intent);
     }
 }

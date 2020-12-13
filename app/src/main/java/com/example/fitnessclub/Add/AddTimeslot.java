@@ -1,4 +1,4 @@
-package com.example.fitnessclub;
+package com.example.fitnessclub.Add;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.fitnessclub.Manage.ManageTimeslot;
 import com.example.fitnessclub.Model.ManageTimeSlotData;
+import com.example.fitnessclub.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -35,7 +37,7 @@ public class AddTimeslot extends AppCompatActivity {
 
                 myRef.push().setValue(new ManageTimeSlotData(name.getText().toString(),start_time.getText().toString(),end_time.getText().toString()));
 
-                Intent intent = new Intent(AddTimeslot.this,ManageTimeslot.class);
+                Intent intent = new Intent(AddTimeslot.this, ManageTimeslot.class);
                 startActivity(intent);
             }
         });
