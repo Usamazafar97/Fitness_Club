@@ -33,4 +33,29 @@ public class Session {
         String email = prefs.getString("email","");
         return email;
     }
+
+    public void setMonday(String mon_train) {
+        prefs.edit().putString("mon_train", mon_train).commit();
+    }
+
+    public String getMonday() {
+        String mon_train = prefs.getString("mon_train","");
+        return mon_train;
+    }
+    public void setTuesday(String tue_train) {
+        prefs.edit().putString("tue_train", tue_train).commit();
+    }
+
+    public String getTuesday() {
+        String tue_train = prefs.getString("tue_train","");
+        return tue_train;
+    }
+    public void setWednesday(String wed_train) {
+        prefs.edit().putString("wed_train", wed_train).commit();
+    }
+
+    public String getWednesday() {
+        String wed_train = prefs.getString("wed_train","");
+        return wed_train;
+    }
 }

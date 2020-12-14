@@ -86,7 +86,7 @@ public class CancelReservation extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(CancelReservation.this);
                 dialog.setTitle("Do you want to delete this?");
                 dialog.setMessage("Are you sure?");
-                dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                dialog.setPositiveButton("Keep", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -108,7 +108,7 @@ public class CancelReservation extends AppCompatActivity {
                         //Toast.makeText(mContext, "Deleted", Toast.LENGTH_SHORT).show();
                     }
                 });
-                dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                dialog.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(mContext, "Cancelled", Toast.LENGTH_SHORT).show();

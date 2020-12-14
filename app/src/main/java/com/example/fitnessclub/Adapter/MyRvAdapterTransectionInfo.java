@@ -5,11 +5,13 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Model.ReservationInfoData;
 import com.example.fitnessclub.R;
 import com.example.fitnessclub.Model.TransectionInfoData;
 
@@ -38,7 +40,7 @@ public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapter
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(@NonNull MyRvAdapterTransectionInfo.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyRvAdapterTransectionInfo.MyViewHolder holder, final int position) {
         holder.id.setText(ls.get(position).getId());
         holder.status.setText(ls.get(position).getStatus());
         holder.name.setText(ls.get(position).getName());
@@ -46,6 +48,14 @@ public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapter
             @Override
             public void onClick(View v) {
                 Toast.makeText(c, position + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.paid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.status.setText("Paid");
+                holder.ivPic.setImageDrawable(c.getDrawable(R.drawable.ic_tick_sign));
+                Toast.makeText(c, position + "hello", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -57,10 +67,19 @@ public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapter
         return ls.size();
     }
 
+
+    public void setContactList( List<TransectionInfoData> contactList){
+        // ls.clear();
+        ls = contactList;
+        notifyDataSetChanged();
+    }
+
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, id, status;
         RelativeLayout row;
         ImageView ivPic;
+        Button paid;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,6 +87,7 @@ public class MyRvAdapterTransectionInfo extends RecyclerView.Adapter<MyRvAdapter
             id = itemView.findViewById(R.id.id);
             status = itemView.findViewById(R.id.status);
             row = itemView.findViewById(R.id.row);
+            paid = itemView.findViewById(R.id.paid);
             ivPic = itemView.findViewById(R.id.iv_pic);
         }
     }

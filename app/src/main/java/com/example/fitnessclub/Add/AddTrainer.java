@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.fitnessclub.AdminLog;
 import com.example.fitnessclub.Manage.ManageTrainer;
 import com.example.fitnessclub.Model.ManageTrainerData;
 import com.example.fitnessclub.R;
@@ -18,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddTrainer extends AppCompatActivity {
     Button add;
-    Spinner ExcerciseTypeSpinner,timeSpinner;
+    //Spinner ExcerciseTypeSpinner,timeSpinner;
     EditText name,email,phone_no;
 
 
@@ -27,8 +28,8 @@ public class AddTrainer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_trainer);
 
-        ExcerciseTypeSpinner = (Spinner) findViewById(R.id.ExcerciseTypeSpinner);
-        timeSpinner = (Spinner) findViewById(R.id.timeSpinner);
+//        ExcerciseTypeSpinner = (Spinner) findViewById(R.id.ExcerciseTypeSpinner);
+//        timeSpinner = (Spinner) findViewById(R.id.timeSpinner);
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
         phone_no = findViewById(R.id.phone_no);
@@ -37,23 +38,23 @@ public class AddTrainer extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                String excerciseType = "Cardio-Squates-Lunges";
-                excerciseType = String.valueOf(ExcerciseTypeSpinner.getSelectedItem());
-                String timeslot = "0100-0200 pm";
-                timeslot = String.valueOf(timeSpinner.getSelectedItem());
-
-                Toast.makeText(AddTrainer.this,
-                        "OnClickListener : " + excerciseType +" "+ timeslot ,
-                        Toast.LENGTH_SHORT).show();
+//
+//
+//                String excerciseType = "Cardio-Squates-Lunges";
+//                excerciseType = String.valueOf(ExcerciseTypeSpinner.getSelectedItem());
+//                String timeslot = "0100-0200 pm";
+//                timeslot = String.valueOf(timeSpinner.getSelectedItem());
+//
+//                Toast.makeText(AddTrainer.this,
+//                        "OnClickListener : " + excerciseType +" "+ timeslot ,
+//                        Toast.LENGTH_SHORT).show();
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("Trainers");
 
-                myRef.push().setValue(new ManageTrainerData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString(),timeslot,excerciseType));
+                myRef.push().setValue(new ManageTrainerData(name.getText().toString(),phone_no.getText().toString(),email.getText().toString()));
 
-                Intent intent = new Intent(AddTrainer.this, ManageTrainer.class);
+                Intent intent = new Intent(AddTrainer.this, AdminLog.class);
                 startActivity(intent);
             }
         });

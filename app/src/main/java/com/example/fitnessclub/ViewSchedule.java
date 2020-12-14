@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Adapter.MyRvAdapterManageTrainer;
 import com.example.fitnessclub.Adapter.MyRvAdapterViewSchedule;
+import com.example.fitnessclub.Edit.EditTrainer;
+import com.example.fitnessclub.Manage.ManageTrainer;
+import com.example.fitnessclub.Model.ManageTrainerData;
 import com.example.fitnessclub.Model.ViewSceduleData;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ViewSchedule extends AppCompatActivity {
+public class ViewSchedule extends AppCompatActivity implements MyRvAdapterViewSchedule.ManageTimeAdapterListen{
     RecyclerView rv;
     Button add;
     List<ViewSceduleData> contacts;
@@ -32,10 +38,18 @@ public class ViewSchedule extends AppCompatActivity {
     DatabaseReference databaseReference;
     MyRvAdapterViewSchedule adapter;
 
+    Boolean mon_done = false;
+    Boolean tue_done = false;
+    Boolean wed_done = false;
+
+
     String monTrain="";
     String tueTrain="";
     String wedTrain="";
+
     String time="";
+    FirebaseAuth m_firebaseAuth =  FirebaseAuth.getInstance();
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +57,8 @@ public class ViewSchedule extends AppCompatActivity {
         setContentView(R.layout.activity_view_schedule);
 
         contacts = new ArrayList<>();
+
+        session = new Session(this);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
@@ -63,7 +79,11 @@ public class ViewSchedule extends AppCompatActivity {
                 //contacts.setNoti
                 adapter.setContactList(contacts);
 
-                Toast.makeText(ViewSchedule.this, monTrain + tueTrain + wedTrain + time, Toast.LENGTH_SHORT).show();
+                Log.d("View Schedule","before putting values" + mon_done + tue_done + wed_done);
+
+
+
+                //Toast.makeText(ViewSchedule.this, monTrain + tueTrain + wedTrain + time, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -74,10 +94,60 @@ public class ViewSchedule extends AppCompatActivity {
             }
         });
 
+
+
+
+//        adapter.setContactList(contacts);
+
         rv = findViewById(R.id.rv);
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
-        adapter = new MyRvAdapterViewSchedule(contacts, this);
+        adapter = new MyRvAdapterViewSchedule(contacts, this,this);
         rv.setAdapter(adapter);
     }
+
+
+    @Override
+    public void onItemAttendedClick(ViewSceduleData attendedItem, int pos) {
+        //saveSchedule(pos);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Trainees");
+        String userId = m_firebaseAuth.getCurrentUser().getUid();
+
+                //mon_attend, tue_attend, wed_attend
+
+//        Log.d("in attended clicked","before putting values" + mon_done + tue_done + wed_done);
+        if(pos == 0)
+        {
+//            mon_done = true;
+//            session.setMonday("true");
+            Log.d("in attended clicked","in " + pos );
+            myRef.child(userId).child("mon_attend").setValue("true");
+        }
+        if(pos == 1) {
+//            tue_done = true;
+//            session.setTuesday("true");
+            Log.d("in attended clicked","in " + pos );
+            myRef.child(userId).child("tue_attend").setValue("true");
+        }
+        if(pos == 2){
+//            wed_done = true;
+//            session.setWednesday("true");
+            Log.d("in attended clicked","in " + pos );
+            myRef.child(userId).child("wed_attend").setValue("true");
+        }
+//
+//        Toast.makeText(this, pos + " clicked", Toast.LENGTH_SHORT).show();
+//        Log.d("in attended clicked","after putting values" + mon_done + tue_done + wed_done);
+
+        Toast.makeText(this, session.getMonday() + " " + session.getTuesday() + " " + session.getWednesday(), Toast.LENGTH_SHORT).show();
+//
+//        if(session.getMonday().equals("true")) myRef.child(userId).child("mon_attend").setValue("true");
+//        if(session.getTuesday().equals("true")) myRef.child(userId).child("tue_attend").setValue("true");
+//        if(session.getWednesday().equals("true")) myRef.child(userId).child("wed_attend").setValue("true");
+
+    }
+
+
 }

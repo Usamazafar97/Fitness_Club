@@ -76,7 +76,7 @@ public class BookTrainer extends AppCompatActivity {
                 }
 
                 myRef.child(userId).child("selectTimeSlot").setValue(timeslot);
-                myRef.child(userId).child("ExcerciseType").setValue(excerciseType);
+                myRef.child(userId).child("excerciseType").setValue(excerciseType);
                 myRef.child(userId).child("trainerName").setValue(trainer);
                 myRef.child(userId).child("mon_train").setValue(mon);
                 myRef.child(userId).child("tue_train").setValue(tue);
@@ -84,7 +84,6 @@ public class BookTrainer extends AppCompatActivity {
                 myRef.child(userId).child("mon_attend").setValue("false");
                 myRef.child(userId).child("tue_attend").setValue("false");
                 myRef.child(userId).child("wed_attend").setValue("false");
-                myRef.child(userId).child("IstransPaid").setValue("false");
 
 //                FirebaseDatabase database = FirebaseDatabase.getInstance();
 //                DatabaseReference myRef = database.getReference("Trainers");

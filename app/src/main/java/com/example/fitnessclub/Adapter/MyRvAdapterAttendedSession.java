@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitnessclub.Model.AttentedSessionData;
+import com.example.fitnessclub.Model.ViewSceduleData;
 import com.example.fitnessclub.R;
 
 import java.util.List;
@@ -48,6 +49,11 @@ public class MyRvAdapterAttendedSession extends RecyclerView.Adapter<MyRvAdapter
         });
 
 //        holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
+    }
+    public void setContactList( List<AttentedSessionData> contactList){
+        // ls.clear();
+        ls = contactList;
+        notifyDataSetChanged();
     }
 
     @Override

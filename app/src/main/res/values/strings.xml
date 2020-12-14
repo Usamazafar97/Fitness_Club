@@ -28,7 +28,7 @@
         <item>11:00-12:00 pm</item>
     </string-array>
     <string-array name="excercise_type_array">
-        <item>Choose type array</item>
+        <item>Choose Excercise type</item>
         <item>Cardio-Squates-Lunges</item>
         <item>Squates-Lunges-Pushups</item>
         <item>Crunches-Cardio-Lunges</item>
@@ -38,7 +38,7 @@
 
     <string-array name="membership_type_array">
         <item>Choose membership type</item>
-        <item>Gold </item>
+        <item>Gold</item>
         <item>Silver</item>
         <item>Bronze</item>
     </string-array>

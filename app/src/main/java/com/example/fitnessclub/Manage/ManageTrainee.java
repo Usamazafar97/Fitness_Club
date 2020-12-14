@@ -28,7 +28,7 @@ import java.util.List;
 
 public class ManageTrainee extends AppCompatActivity implements MyRvAdapterManageTrainee.ManageTimeAdapterListen{
     RecyclerView rv;
-    Button add;
+    //Button add;
 
 
     List<ManageTraineeData> contacts;
@@ -38,15 +38,15 @@ public class ManageTrainee extends AppCompatActivity implements MyRvAdapterManag
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_trainee);
-        add = findViewById(R.id.add);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ManageTrainee.this, "floatng button Clicked", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(getApplicationContext(), AddTrainee.class);
-                startActivity(i);
-            }
-        });
+//        add = findViewById(R.id.add);
+//        add.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(ManageTrainee.this, "floatng button Clicked", Toast.LENGTH_LONG).show();
+//                Intent i = new Intent(getApplicationContext(), AddTrainee.class);
+//                startActivity(i);
+//            }
+//        });
 
         contacts = new ArrayList<>();
 

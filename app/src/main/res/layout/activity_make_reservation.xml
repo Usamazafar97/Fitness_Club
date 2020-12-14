@@ -125,6 +125,12 @@
                 android:hint="  Starting Date"
                 android:textColor="#ffff"
                 android:textColorHint="#ffff"
+                android:onClick="onClickDate1"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:imeOptions="actionNext"
+                android:inputType="datetime"
                 android:textSize="16dp" />
 
             <EditText
@@ -145,6 +151,11 @@
                 android:hint="  Ending Date"
                 android:textColor="#ffff"
                 android:textColorHint="#ffff"
+                android:onClick="onClickDate2"
+                android:clickable="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:imeOptions="actionNext"
                 android:textSize="16dp" />
 
         </RelativeLayout>

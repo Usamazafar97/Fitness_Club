@@ -51,7 +51,7 @@
                 android:id="@+id/id"
                 android:layout_weight="1"
                 android:layout_marginLeft="30dp"
-                android:text="time"
+                android:text="email"
                 android:textSize="18dp"
                 android:textColor="#FFFF"
                 android:layout_width="match_parent"
@@ -68,7 +68,8 @@
                 android:layout_height="0dp"/>
 
             <Button
-                android:text="Notify"
+                android:id="@+id/paid"
+                android:text="Paid"
                 android:layout_gravity="right"
                 android:background="@drawable/round_camera"
                 android:textColor="#FFFF"

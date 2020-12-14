@@ -14,6 +14,14 @@ import android.widget.Toast;
 import com.example.fitnessclub.Model.ManageTrainerData;
 import com.example.fitnessclub.R;
 import com.example.fitnessclub.Model.ViewSceduleData;
+import com.example.fitnessclub.ViewSchedule;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -26,9 +34,14 @@ public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterVie
     List<ViewSceduleData> ls;
     Context c;
 
-    public MyRvAdapterViewSchedule(List<ViewSceduleData> ls, Context c) {
+    MyRvAdapterViewSchedule.ManageTimeAdapterListen listener;
+
+
+
+    public MyRvAdapterViewSchedule(List<ViewSceduleData> ls, Context c, MyRvAdapterViewSchedule.ManageTimeAdapterListen listener) {
         this.c = c;
         this.ls = ls;
+        this.listener= listener;
     }
 
     @NonNull
@@ -40,20 +53,25 @@ public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterVie
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(@NonNull MyRvAdapterViewSchedule.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyRvAdapterViewSchedule.MyViewHolder holder, final int position) {
+
+        final ViewSceduleData currentItem =ls.get(position);
+
         holder.time.setText(ls.get(position).getTime());
         holder.name.setText(ls.get(position).getName());
         holder.row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(c, position + "", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(c, position + "", Toast.LENGTH_SHORT).show();
             }
         });
 
         holder.attended.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(c, position + "Attended Pressed", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(c, "Marked Attended", Toast.LENGTH_SHORT).show();
+                listener.onItemAttendedClick(currentItem, position);
             }
         });
 
@@ -85,6 +103,9 @@ public class MyRvAdapterViewSchedule extends RecyclerView.Adapter<MyRvAdapterVie
             ivPic = itemView.findViewById(R.id.iv_pic);
             attended = itemView.findViewById(R.id.attended);
         }
+    }
+    public interface  ManageTimeAdapterListen{
+        void onItemAttendedClick(ViewSceduleData attendedItem, int pos);
     }
 }
 

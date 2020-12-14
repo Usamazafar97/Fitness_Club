@@ -130,7 +130,7 @@
                     android:textAllCaps="false"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="View Sessions"
+                    android:text="Attended Sessions"
                     android:layout_marginBottom="10dp"
                     android:background="#A9A9A9"
                     android:alpha="0.85"

@@ -59,7 +59,7 @@
 
         android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="360dp"
         android:layout_below="@+id/top"
         android:background="@drawable/round_corners"
         >
@@ -75,18 +75,19 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:id="@+id/name"
+            android:layout_marginLeft="10dp"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="15dp"
+            android:layout_marginLeft="10dp"
             android:textSize="24dp"
             android:textStyle="bold"
             android:textColor="#FFFF"
             android:textColorHint="#FFFF"
             android:hint="    Type Message...."
             android:layout_below="@+id/name"
-            android:layout_marginHorizontal="30dp"
             android:background= "@drawable/round_message"
             android:id="@+id/message"
             />

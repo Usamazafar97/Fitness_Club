@@ -12,15 +12,15 @@ import com.example.fitnessclub.R;
 
 public class EditTimeslot extends AppCompatActivity {
 
-    Button edit;
+    Button update;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_timeslot);
 
-        edit = findViewById(R.id.edit);
-        edit.setOnClickListener(new View.OnClickListener() {
+        update = findViewById(R.id.update);
+        update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(EditTimeslot.this, ManageTimeslot.class);

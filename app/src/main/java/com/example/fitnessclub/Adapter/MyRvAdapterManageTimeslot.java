@@ -1,6 +1,7 @@
 package com.example.fitnessclub.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Edit.EditTimeslot;
+import com.example.fitnessclub.Manage.ManageTimeslot;
 import com.example.fitnessclub.Model.ManageTimeSlotData;
 import com.example.fitnessclub.R;
 
@@ -59,14 +62,19 @@ public class MyRvAdapterManageTimeslot extends RecyclerView.Adapter<MyRvAdapterM
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemEditClick(currentItem);
+                //listener.onItemEditClick(currentItem);
+
+                Intent intent = new Intent(c, EditTimeslot.class);
+                c.startActivity(intent);
+
             }
         });
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemDeleteClick(currentItem);
+                //listener.onItemDeleteClick(currentItem);
+                Toast.makeText(c, "Delete clicked", Toast.LENGTH_SHORT).show();
             }
         });
 

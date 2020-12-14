@@ -56,19 +56,19 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
         });
 
 
-        holder.edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onItemEditClick(currentItem);
-            }
-        });
-
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onItemDeleteClick(currentItem);
-            }
-        });
+//        holder.edit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                listener.onItemEditClick(currentItem);
+//            }
+//        });
+//
+//        holder.delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                listener.onItemDeleteClick(currentItem);
+//            }
+//        });
     }
 
     public void setContactList( List<ManageTraineeData> contactList){
@@ -84,7 +84,7 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, phno, email;
-        ImageView delete,edit;
+        //ImageView delete,edit;
         RelativeLayout row;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -93,8 +93,8 @@ public class MyRvAdapterManageTrainee extends RecyclerView.Adapter<MyRvAdapterMa
             phno = itemView.findViewById(R.id.phno);
             email = itemView.findViewById(R.id.email);
             row = itemView.findViewById(R.id.row);
-            delete = itemView.findViewById(R.id.delete);
-            edit = itemView.findViewById(R.id.edit);
+//            delete = itemView.findViewById(R.id.delete);
+//            edit = itemView.findViewById(R.id.edit);
         }
     }
 

@@ -27,7 +27,6 @@ public class TransectionInfoData {
         this.id = id;
         this.status = status;
         this.pic = pic;
-
     }
 
     public String getName() {

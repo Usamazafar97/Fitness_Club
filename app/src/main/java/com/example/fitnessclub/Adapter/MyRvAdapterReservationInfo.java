@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Model.ManageTraineeData;
 import com.example.fitnessclub.R;
 import com.example.fitnessclub.Model.ReservationInfoData;
 
@@ -51,6 +52,12 @@ import androidx.recyclerview.widget.RecyclerView;
             });
 
             holder.ivPic.setImageDrawable(c.getDrawable(ls.get(position).getPic()));
+        }
+
+        public void setContactList( List<ReservationInfoData> contactList){
+            // ls.clear();
+            ls = contactList;
+            notifyDataSetChanged();
         }
 
         @Override
