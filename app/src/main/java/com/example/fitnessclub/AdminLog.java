@@ -8,16 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.fitnessclub.Manage.ManageTimeslot;
-import com.example.fitnessclub.Manage.ManageTrainee;
-import com.example.fitnessclub.Manage.ManageTrainer;
+
+import com.example.fitnessclub.Reservation.ReservationInfo;
+import com.example.fitnessclub.Trainee.ManageTrainee;
+import com.example.fitnessclub.Trainer.ManageTrainer;
+import com.example.fitnessclub.Transection.TransectionInfo;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminLog extends AppCompatActivity {
 
     Button manageTrainer;
     Button manageTrainee;
-    Button manageTimeslot;
+    //Button manageTimeslot;
     Button reservationInfo;
     Button transectionInfo;
     Button sign_out;
@@ -51,17 +53,17 @@ public class AdminLog extends AppCompatActivity {
 
             }
         });
-        manageTimeslot = findViewById(R.id.manage_timeslots);
-        manageTimeslot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(AdminLog.this, "Hello", Toast.LENGTH_SHORT).show();
-
-                Intent i = new Intent(getApplicationContext(), ManageTimeslot.class);
-                startActivity(i);
-
-            }
-        });
+//        manageTimeslot = findViewById(R.id.manage_timeslots);
+//        manageTimeslot.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(AdminLog.this, "Hello", Toast.LENGTH_SHORT).show();
+//
+//                Intent i = new Intent(getApplicationContext(), ManageTimeslot.class);
+//                startActivity(i);
+//
+//            }
+//        });
         reservationInfo = findViewById(R.id.reservation_info);
         reservationInfo.setOnClickListener(new View.OnClickListener() {
             @Override

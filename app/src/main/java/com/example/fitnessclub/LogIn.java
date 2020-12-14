@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessclub.Trainee.TraineeLog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -21,7 +21,7 @@ public class LogIn extends AppCompatActivity {
 
     TextView signUp;
     TextView logInAdmin;
-    TextView logInTrainee;
+    //TextView logInTrainee;
 
     EditText email, password;
     TextView sign_up_option;
@@ -39,7 +39,7 @@ public class LogIn extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         logInAdmin = findViewById(R.id.login_admin);
-        logInTrainee = findViewById(R.id.login_trainee);
+        //logInTrainee = findViewById(R.id.login_trainee);
         sign_up_option = findViewById(R.id.sign_up);
 
         session = new Session(this);
@@ -60,7 +60,7 @@ public class LogIn extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else {
-                        Intent intent = new Intent(LogIn.this,TraineeLog.class);
+                        Intent intent = new Intent(LogIn.this, TraineeLog.class);
                         startActivity(intent);
                     }
 
@@ -78,7 +78,7 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String temp_email = email.getText().toString();
-                String temp_password = password.getText().toString();
+                final String temp_password = password.getText().toString();
 
                 if (temp_email.isEmpty()){
                     email.setError("please enter the email");
@@ -101,10 +101,17 @@ public class LogIn extends AppCompatActivity {
 
                             }
                             else {
-                                session.setUserStatus("admin");
-                                session.setEmail(temp_email);
-                                Intent intent = new Intent(LogIn.this,AdminLog.class);
-                                startActivity(intent);
+                                if(temp_email.equals("osamazafar97@gmail.com") && temp_password.equals("25111997")){
+                                    session.setUserStatus("admin");
+                                    session.setEmail(temp_email);
+                                    Intent intent = new Intent(LogIn.this,AdminLog.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    session.setUserStatus("trainee");
+                                    Intent intent = new Intent(LogIn.this,TraineeLog.class);
+                                    startActivity(intent);
+                                }
                             }
                         }
                     });
@@ -115,46 +122,46 @@ public class LogIn extends AppCompatActivity {
             }
         });
 
-        logInTrainee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String temp_email = email.getText().toString();
-                String temp_password = password.getText().toString();
-
-                if (temp_email.isEmpty()){
-                    email.setError("please enter the email");
-                    email.requestFocus();
-                }
-
-                if (temp_password.isEmpty()){
-                    password.setError("please enter the password");
-                    password.requestFocus();
-                }
-                else if (temp_email.isEmpty() && temp_password.isEmpty()){
-                    Toast.makeText(LogIn.this, "Fields are empty", Toast.LENGTH_SHORT).show();
-                }
-                else if (!(temp_email.isEmpty() && temp_password.isEmpty())){
-                    m_firebaseAuth.signInWithEmailAndPassword(temp_email,temp_password).addOnCompleteListener(LogIn.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()){
-                                Toast.makeText(LogIn.this, "LogIn error, Please try again", Toast.LENGTH_SHORT).show();
-
-                            }
-                            else {
-                                session.setUserStatus("trainee");
-                                Intent intent = new Intent(LogIn.this,TraineeLog.class);
-                                startActivity(intent);
-                            }
-                        }
-                    });
-                }
-                else{
-                    Toast.makeText(LogIn.this, "Error occured!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+//        logInTrainee.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String temp_email = email.getText().toString();
+//                String temp_password = password.getText().toString();
+//
+//                if (temp_email.isEmpty()){
+//                    email.setError("please enter the email");
+//                    email.requestFocus();
+//                }
+//
+//                if (temp_password.isEmpty()){
+//                    password.setError("please enter the password");
+//                    password.requestFocus();
+//                }
+//                else if (temp_email.isEmpty() && temp_password.isEmpty()){
+//                    Toast.makeText(LogIn.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+//                }
+//                else if (!(temp_email.isEmpty() && temp_password.isEmpty())){
+//                    m_firebaseAuth.signInWithEmailAndPassword(temp_email,temp_password).addOnCompleteListener(LogIn.this, new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            if (!task.isSuccessful()){
+//                                Toast.makeText(LogIn.this, "LogIn error, Please try again", Toast.LENGTH_SHORT).show();
+//
+//                            }
+//                            else {
+//                                session.setUserStatus("trainee");
+//                                Intent intent = new Intent(LogIn.this,TraineeLog.class);
+//                                startActivity(intent);
+//                            }
+//                        }
+//                    });
+//                }
+//                else{
+//                    Toast.makeText(LogIn.this, "Error occured!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+//
         sign_up_option.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

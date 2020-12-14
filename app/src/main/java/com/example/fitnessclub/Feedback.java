@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.fitnessclub.Trainee.TraineeLog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -39,7 +40,7 @@ public class Feedback extends AppCompatActivity {
 
                 myRef.child(userId).child("feedback").setValue(message.getText().toString());
 
-                Intent intent = new Intent(Feedback.this,TraineeLog.class);
+                Intent intent = new Intent(Feedback.this, TraineeLog.class);
                 startActivity(intent);
 
             }

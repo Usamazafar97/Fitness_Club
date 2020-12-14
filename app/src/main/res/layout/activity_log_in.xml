@@ -60,6 +60,7 @@
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_door_key"
             android:hint="  Password"
+            android:inputType="textPassword"
             android:textColorHint="#FFFF"
             android:textColor="#FFFF"
             android:textSize="24dp"
@@ -82,7 +83,7 @@
             android:textColor="#FFFF" />
 
         <TextView
-            android:id="@+id/login"
+            android:id="@+id/login_admin"
             android:layout_weight="1"
             android:textSize="24dp"
             android:layout_gravity="center"
@@ -93,36 +94,36 @@
             android:textStyle="italic|bold"
             android:layout_height="0dp"></TextView>
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:weightSum="2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
+<!--        <LinearLayout-->
+<!--            android:layout_weight="1"-->
+<!--            android:weightSum="2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp">-->
 
-            <TextView
-                android:id="@+id/login_admin"
-                android:textColor="#FFFF"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="As Admin"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"/>
+<!--            <TextView-->
+<!--                android:id="@+id/login_admin"-->
+<!--                android:textColor="#FFFF"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:text="As Admin"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"/>-->
 
-            <TextView
-                android:id="@+id/login_trainee"
-                android:textColor="#FFFF"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="As Trainee"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"/>
+<!--            <TextView-->
+<!--                android:id="@+id/login_trainee"-->
+<!--                android:textColor="#FFFF"-->
+<!--                android:textSize="20dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:gravity="center"-->
+<!--                android:text="As Trainee"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"/>-->
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         <TextView
             android:id="@+id/sign_up"

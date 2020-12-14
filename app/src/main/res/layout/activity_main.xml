@@ -36,7 +36,7 @@
             android:fontFamily="Arial"
             android:text="GET STARTED"
             android:textColor="#ffff"
-            android:textSize="35dp"
+            android:textSize="25dp"
             android:textStyle="bold"></TextView>
 
     </LinearLayout>
