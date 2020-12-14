@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/fitness_logo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -15,7 +15,6 @@
         <activity android:name=".AttendedSession.AttendedSessions" />
         <activity android:name=".Trainer.ManageTrainer" />
         <activity android:name=".Trainee.ManageTrainee" />
-        <activity android:name=".Manage.ManageTimeslot" />
         <activity android:name=".Reservation.CancelReservation" />
         <activity android:name=".SignUp" />
         <activity android:name=".LogIn" />
@@ -24,10 +23,6 @@
         <activity android:name=".Feedback" />
         <activity android:name=".Trainer.AddTrainer" />
         <activity android:name=".Trainee.AddTrainee" />
-        <activity android:name=".Add.AddTimeslot" />
-        <activity android:name=".Edit.EditTrainer" />
-        <activity android:name=".Edit.EditTrainee" />
-        <activity android:name=".Edit.EditTimeslot" />
         <activity android:name=".Trainee.TraineeLog" />
         <activity android:name=".AdminLog" />
         <activity android:name=".MainActivity" >
