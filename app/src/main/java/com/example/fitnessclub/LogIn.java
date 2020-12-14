@@ -55,14 +55,14 @@ public class LogIn extends AppCompatActivity {
                 if (m_FireaseUser != null){
                     Toast.makeText(LogIn.this, "You are logged in", Toast.LENGTH_SHORT).show();
 
-                    if (session.getUserStatus().equals("admin")){
-                        Intent intent = new Intent(LogIn.this,AdminLog.class);
-                        startActivity(intent);
-                    }
-                    else {
+//                    if (session.getUserStatus().equals("admin")){
+//                        Intent intent = new Intent(LogIn.this,AdminLog.class);
+//                        startActivity(intent);
+//                    }
+//                    else {
                         Intent intent = new Intent(LogIn.this, TraineeLog.class);
                         startActivity(intent);
-                    }
+                    //}
 
                 }
                 else{
