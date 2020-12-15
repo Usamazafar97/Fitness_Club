@@ -3,6 +3,7 @@
     package="com.example.fitnessclub">
 
     <application
+        android:name="com.example.fitnessclub.offlineApp"
         android:allowBackup="true"
         android:icon="@mipmap/fitness_logo"
         android:roundIcon="@mipmap/ic_launcher_round"
