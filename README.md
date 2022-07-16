@@ -1,5 +1,5 @@
 # Fitness Club [Fitness-Club]
-Fitness Club is a GYM managment application that is used by the Admin, Trainer and Trainee 
+Fitness Club is a GYM managment application that is used by the Admin, Trainer and Trainee. < /br> 
 [Fitness Club ist eine GYM-Verwaltungsanwendung, die vom Administrator, Trainer und Auszubildenden verwendet wird]
 
 The project aims to develop a GYM Management System that will handle all the necessary and minute
